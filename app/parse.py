@@ -28,7 +28,7 @@ def parse_single_quote(product_soup: Tag) -> Quote:
     )
 
 
-def get_all_quotes():
+def get_all_quotes() -> list:
     quotes = []
     page_num = 1
 
@@ -45,7 +45,7 @@ def get_all_quotes():
     return quotes
 
 
-def write_quotes_to_csv(quotes, output_csv_path) -> None:
+def write_quotes_to_csv(quotes: list, output_csv_path: str) -> None:
     with open(output_csv_path, "w", encoding="utf-8", newline="") as file:
         writer = csv.writer(file)
         writer.writerow(QUOTES_FIELDS)
